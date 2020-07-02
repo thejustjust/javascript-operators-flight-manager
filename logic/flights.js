@@ -1,9 +1,10 @@
 function Flights() {
-  calculateNumberOfFlights(numPass,flightCap){
-    if(numPass % flightCap ==0){
-    let flights = numpass / flightCap;
+  calculateNumberOfFlights(passengers,flightCap){
+    
+    if(passengers % flightCap ==0){
+    let flights = passengers / flightCap;
     } else {
-    flights = (numpass / flightCap) + 1;
+    flights = (passengers / flightCap) + 1;
     }
     return flights;
   }
