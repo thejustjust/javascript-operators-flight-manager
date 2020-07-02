@@ -1,10 +1,12 @@
 function Flights() {
   calculateNumberOfFlights(numPass,flightCap){
     if(numPass % flightCap ==0){
-    let numFlights = numpass / flightCap;
+    let flights = numpass / flightCap;
+    } else {
+    flights = (numpass / flightCap) + 1;
     }
-    return numFlights;
+    return flights;
   }
-}
 return {calculateNumberOfFlights};
+}
 module.exports = Flights();
