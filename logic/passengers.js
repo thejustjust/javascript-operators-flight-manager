@@ -35,7 +35,33 @@ function Passengers() {
                 regularPassengersWithEconomySeats:regularPassengersWithEconomySeats};
         }
 
-  
+  function updateConfiguration(configuration, seatsPerFlight) {
+        let passengersWithSeats = 0;
+        while (configuration.passengers > 0) {
+            if (configuration.seats > 0) {
+               if (configuration.passengers >= configuration.seats) {
+
+                    if (configuration.seats > configuration.seatsPerFlight) {
+                        configuration.passengers -= seatsPerFlight;
+                        configuration.seats -= seatsPerFlight;
+                        passengersWithSeats += seatsPerFlight;
+                    } else {
+                        configuration.passengers -= configuration.seats;
+                        passengersWithSeats += configuration.seats;
+                        configuration.seats = 0;
+                    }
+               } else {
+                    passengersWithSeats += configuration.passengers;
+                    configuration.seats -= configuration.passengers;
+                    configuration.passengers = 0;
+               }
+            } else {
+               break;
+            }
+        }
+        return passengersWithSeats;
+    }
+    
 return {checkFlightCapacity, distributeAllSeatsToAllPassengers};
 
 }
