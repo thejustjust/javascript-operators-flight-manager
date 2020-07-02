@@ -1,7 +1,7 @@
 function Flights() {
     function calculateNumberOfFlights(passengers, capacity) {
         let flights;
-      
+
         if ((passengers < 0) || (!Number.isInteger(Number(passengers)))) {
             throw new Error("The number of passengers must be a positive integer value")
         }
@@ -18,10 +18,7 @@ function Flights() {
         return flights;
     }
 
-    return {calculateNumberOfFlights};
-
-}
-function checkAircraftRevision(distanceLimit, distancesArray) {
+    function checkAircraftRevision(distanceLimit, distancesArray) {
         let totalDistance = 0;
         let distance;
         for(distance of distancesArray) {
@@ -43,4 +40,5 @@ function checkAircraftRevision(distanceLimit, distancesArray) {
     return {calculateNumberOfFlights, checkAircraftRevision};
 
 }
+
 module.exports = Flights();
